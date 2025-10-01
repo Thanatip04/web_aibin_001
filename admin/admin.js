@@ -169,7 +169,14 @@ function renderCharts(dash) {
       // ใช้ข้อมูลจาก API โดยตรง:
       labels: Object.keys(dash.types),
       datasets: [{ data: Object.values(dash.types),
-        backgroundColor: ['#22c55e','#3b82f6','#f59e0b','#6b7280','#ef4444'] }]
+        backgroundColor: [
+          '#d6d6d6ff',
+          '#3b82f6',
+          '#f59e0b',
+          '#ff76fdff',
+          '#ef4444',
+          '#6b7280',
+          '#00ff48ff'] }]
     },
     options: { responsive: true, maintainAspectRatio: false }
   });

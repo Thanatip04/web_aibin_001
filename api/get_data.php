@@ -190,7 +190,7 @@ try {
             $result = [
                 'ai' => true,
                 'camera' => false,
-                'microbit' => true,
+                'microbit' => false,
                 'uptime' => date('Y-m-d H:i:s')
             ];
             break;

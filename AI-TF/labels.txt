@@ -1,0 +1,6 @@
+0 trash
+1 plastic
+2 paper
+3 metal
+4 glass
+5 cardboard
