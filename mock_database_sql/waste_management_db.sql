@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 25, 2025 at 08:39 AM
+-- Generation Time: Oct 01, 2025 at 11:31 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -41,7 +41,7 @@ CREATE TABLE `bin_status` (
 --
 
 INSERT INTO `bin_status` (`id`, `location`, `last_updated`, `plastic_status`, `recycle_status`, `general_status`) VALUES
-('BIN-001', 'โรงเรียน', '2025-08-30 19:36:14', 'full', 'not_full', 'full');
+('BIN-001', 'โรงเรียน', '2025-08-30 19:36:14', 'full', 'full', 'full');
 
 -- --------------------------------------------------------
 
@@ -61,7 +61,7 @@ CREATE TABLE `dashboard_kpi` (
 --
 
 INSERT INTO `dashboard_kpi` (`id`, `todayCount`, `aiAccuracy`, `totalCount`) VALUES
-(1, 123, 85.70, 456);
+(1, 23, 91.03, 123);
 
 -- --------------------------------------------------------
 
@@ -105,10 +105,13 @@ CREATE TABLE `dashboard_types` (
 --
 
 INSERT INTO `dashboard_types` (`id`, `type_name`, `type_count`) VALUES
-(0, 'อื่นๆ', 20),
-(1, 'พลาสติก', 120),
-(2, 'รีไซเคิล', 60),
-(3, 'ทั่วไป', 20);
+(0, 'อื่นๆ', 15),
+(1, 'พลาสติก', 38),
+(2, 'ทั่วไป', 28),
+(3, 'กระดาษ', 25),
+(4, 'แก้ว', 6),
+(5, 'โลหะ', 9),
+(6, 'ขยะเปียก', 2);
 
 -- --------------------------------------------------------
 
@@ -129,12 +132,10 @@ CREATE TABLE `feedback` (
 --
 
 INSERT INTO `feedback` (`id`, `user_id`, `bin_id`, `message`, `timestamp`) VALUES
-(1, '21915', NULL, 'เทสฟีดแบ็ค', '2025-08-30 17:30:16'),
-(2, '21915', NULL, 'test2', '2025-08-30 17:31:09'),
-(3, '21915', NULL, 'เหนื่อยแล้วพี่จ๋าาา', '2025-08-30 18:01:37'),
-(4, '21915', NULL, 'อยากนอน', '2025-08-30 18:02:42'),
-(5, '21915', NULL, 'หิวข้าว', '2025-08-30 18:02:51'),
-(18, '21915', 'BIN-001', 'jubjub', '2025-09-25 13:38:33');
+(3, '21915', NULL, 'aiไม่แม่นเลย', '2025-09-30 18:01:37'),
+(4, '21915', NULL, 'สวัสดีครับ', '2025-09-30 18:02:42'),
+(5, '21915', NULL, 'หิวข้าว', '2025-09-30 18:02:51'),
+(18, '21915', 'BIN-001', 'I love Depa', '2025-09-30 13:38:33');
 
 -- --------------------------------------------------------
 
@@ -206,10 +207,10 @@ CREATE TABLE `waste_types` (
 INSERT INTO `waste_types` (`id`, `type_name`, `points`) VALUES
 (1, 'พลาสติก', 5),
 (2, 'ขยะทั่วไป', 1),
-(3, 'ขยะรีไซเคิล', 5),
+(3, 'กระดาษ', 5),
 (4, 'แก้ว', 2),
 (5, 'โลหะ', 3),
-(6, 'เศษอาหาร', 1);
+(6, 'ขยะเปียก', 1);
 
 --
 -- Indexes for dumped tables
@@ -282,7 +283,7 @@ ALTER TABLE `dashboard_last7days`
 -- AUTO_INCREMENT for table `dashboard_types`
 --
 ALTER TABLE `dashboard_types`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `feedback`
